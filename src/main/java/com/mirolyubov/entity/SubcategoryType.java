@@ -1,4 +1,4 @@
-package com.mirolyubov.parsers;
+package com.mirolyubov.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -10,22 +10,20 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "categoryType", propOrder = {
-    "subcategory"
-})
-public class CategoryType {
+@XmlType(name = "subcategoryType", propOrder = {"item"})
+public class SubcategoryType {
 
-    protected List<SubcategoryType> subcategory;
+    public List<ItemType> item;
 
-    @JsonProperty("category")
+    @JsonProperty("subcategory")
     @XmlAttribute(name = "name", required = true)
-    protected String name;
+    public String name;
 
-    public List<SubcategoryType> getSubcategory() {
-        if (subcategory == null) {
-            subcategory = new ArrayList<SubcategoryType>();
+    public List<ItemType> getItem() {
+        if (item == null) {
+            item = new ArrayList<ItemType>();
         }
-        return this.subcategory;
+        return this.item;
     }
 
     public String getName() {
@@ -38,7 +36,8 @@ public class CategoryType {
 
     @Override
     public String toString() {
-        return "subcategory=" + subcategory +
-                ", name='" + name + '\'' + "\n";
+        return "\n" +
+                "item=" + item +
+                ", name='" + name + '\'';
     }
 }

@@ -1,4 +1,4 @@
-package com.mirolyubov.parsers;
+package com.mirolyubov.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -22,27 +22,27 @@ public class ItemType {
 
     @JsonProperty("manufacturer")
     @XmlElement
-    protected String manufacturer;
+    public String manufacturer;
 
     @JsonProperty("model")
     @XmlElement
-    protected String model;
+    public String model;
 
     @JsonProperty("date_of_manufacture")
     @XmlElement(name="date_of_manufacture")
-    protected String dateOfManufacture;
+    public String dateOfManufacture;
 
     @JsonProperty("color")
     @XmlElement
-    protected String color;
+    public String color;
 
     @JsonProperty("price")
     @XmlElement
-    protected BigDecimal price;
+    public BigDecimal price;
 
     @JsonProperty("amount")
     @XmlElement
-    protected BigInteger amount;
+    public BigInteger amount;
 
     public String getManufacturer() {
         return manufacturer;

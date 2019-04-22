@@ -33,7 +33,7 @@
   <xs:complexType name="itemType">
     <xs:sequence>
       <!--manufacturer of product-->
-      <xs:element name="manufacturer" type="xs:string" default="n/a" />
+      <xs:element name="manufacturer" type="xs:string"/>
 
       <!--model of product-->
       <xs:element name="model" >

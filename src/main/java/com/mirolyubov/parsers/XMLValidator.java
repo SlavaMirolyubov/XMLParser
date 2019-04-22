@@ -11,12 +11,13 @@ import java.io.IOException;
 import org.xml.sax.SAXException;
 
 public class XMLValidator {
-    public boolean XMLValidation(String xmlpath, String schemapath) {
+
+    public boolean validateXML(String xmlpath, String schemapath) {
+
         try {
             SchemaFactory factory = SchemaFactory
                     .newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = factory.newSchema(new StreamSource(
-                    new FileInputStream(schemapath)));
+            Schema schema = factory.newSchema(new StreamSource(new FileInputStream(schemapath)));
 
             Validator validator = schema.newValidator();
             validator.validate(new StreamSource(new FileInputStream(xmlpath)));
@@ -31,6 +32,6 @@ public class XMLValidator {
             ioe.printStackTrace();
             return false;
         }
-
     }
+
 }

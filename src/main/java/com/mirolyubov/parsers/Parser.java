@@ -1,5 +1,7 @@
 package com.mirolyubov.parsers;
 
+import com.mirolyubov.entity.CategoryType;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
@@ -14,12 +16,14 @@ import java.util.List;
 
 public class Parser {
 
-    public List<CategoryType> parseJAXB(String fileName) {
+    public List<CategoryType> JAXBParseToJavaObject(String fileName) {
 
         List<CategoryType> items = new ArrayList<>();
 
         try {
-            XMLStreamReader xmlr = XMLInputFactory.newInstance().createXMLStreamReader(fileName, new FileInputStream(fileName));
+            XMLStreamReader xmlr = XMLInputFactory
+                    .newInstance()
+                    .createXMLStreamReader(fileName, new FileInputStream(fileName));
 
             while (xmlr.hasNext()) {
 

@@ -11,14 +11,14 @@ public class Converter {
 
     private final static String baseFile = "user.json";
 
-    public static void toJSON(List<CategoryType> items) throws IOException {
+    public void toJSON(List<CategoryType> items) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(new File(baseFile), items);
 
         System.out.println("json created!");
     }
 
-    public static List<CategoryType> toJavaObject() throws IOException {
+    public List<CategoryType> toJavaObject() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(new File(baseFile), new TypeReference<List<CategoryType>>(){});
     }

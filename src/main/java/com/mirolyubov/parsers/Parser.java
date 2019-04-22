@@ -19,9 +19,7 @@ public class Parser {
         List<CategoryType> items = new ArrayList<>();
 
         try {
-            XMLStreamReader xmlr = XMLInputFactory
-                    .newInstance()
-                    .createXMLStreamReader(fileName, new FileInputStream(fileName));
+            XMLStreamReader xmlr = XMLInputFactory.newInstance().createXMLStreamReader(fileName, new FileInputStream(fileName));
 
             while (xmlr.hasNext()) {
 
